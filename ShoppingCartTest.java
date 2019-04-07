@@ -17,7 +17,6 @@ public class ShoppingCartTest {
     public void testGetBalance() {
         System.out.println("Commencing Test For Correct Balance.");
         ShoppingCart instance = new ShoppingCart();
-        System.out.println("Adding 4 Products TO The Shopping Cart.");
         //Create the products and add them to the shopping cart
         Product iPhone = new Product("iPhone 7", 200.00);
         Product laptopchassis = new Product("Clevo P775TM Barebone Chassis", 1200.00);
@@ -30,7 +29,7 @@ public class ShoppingCartTest {
         //Set expected result and test to see if the result was correct
         double expResult = 1850.0;
         double result = instance.getBalance();
-        System.out.println("Balance is $" + result + " Expected Value Was: $" + expResult);
+        System.out.println("Balance Is: $" + result + " Expected Value Was: $" + expResult);
         //assertEquals(expResult, result, 0.0);
         if (result == expResult)
             System.out.println("Test Passed!");
@@ -48,13 +47,14 @@ public class ShoppingCartTest {
      */
     @Test
     public void testAddItem() {
-        System.out.println("addItem");
+        System.out.println("Commencing Test For Adding Products.");
         ShoppingCart instance = new ShoppingCart();//create shopping cart object
         Product iPhone = new Product("iPhone 7", 200.00);//create iphone to add
         //Product item = null;
         instance.addItem(iPhone);//add 1 item, which is iphone
         // TODO review the generated test code and remove the default call to fail.
         int result = instance.getItemCount(); //test/get the new count
+        System.out.println("Result Is: " + result + " Expected Value Was: 1");
         if (result == 1)//if cout is 1, we added 1 item passed
             System.out.println("Test Passed!");
         else
@@ -63,7 +63,7 @@ public class ShoppingCartTest {
             System.out.println();
             fail("Test Failed.");
         }
-        //System.out.println(); 
+        System.out.println(); 
         //fail("The test case is a prototype.");
     }
 
@@ -72,7 +72,7 @@ public class ShoppingCartTest {
      */
     @Test
     public void testRemoveItem() throws Exception {
-        System.out.println("removeItem");
+        System.out.println("Commencing Test For Removing Products.");
         ShoppingCart instance = new ShoppingCart();//create shopping cart object
         Product iPhone = new Product("iPhone 7", 200.00);//create iphone to add
         instance.addItem(iPhone);
@@ -83,6 +83,7 @@ public class ShoppingCartTest {
         instance.removeItem(iPhone);
         // TODO review the generated test code and remove the default call to fail.
         int result = instance.getItemCount();
+        System.out.println("Result Is: " + result + " Expected Value Was: 1");
         if (result == 1)//there should be one item left, then passed!
             System.out.println("Test Passed!");
         else
@@ -91,7 +92,7 @@ public class ShoppingCartTest {
             System.out.println();
             fail("Test Failed.");
         }
-        //System.out.println();
+        System.out.println();
         //fail("The test case is a prototype.");
     }
 
