@@ -49,12 +49,22 @@ public class ShoppingCartTest {
     @Test
     public void testAddItem() {
         System.out.println("addItem");
-        Product item = null;
-        ShoppingCart instance = new ShoppingCart();
-        instance.addItem(item);
+        ShoppingCart instance = new ShoppingCart();//create shopping cart object
+        Product iPhone = new Product("iPhone 7", 200.00);//create iphone to add
+        //Product item = null;
+        instance.addItem(iPhone);//add 1 item, which is iphone
         // TODO review the generated test code and remove the default call to fail.
-        System.out.println();
-        fail("The test case is a prototype.");
+        int result = instance.getItemCount(); //test/get the new count
+        if (result == 1)//if cout is 1, we added 1 item passed
+            System.out.println("Test Passed!");
+        else
+        {
+            System.out.println("Test Failed.");
+            System.out.println();
+            fail("Test Failed.");
+        }
+        //System.out.println(); 
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -63,12 +73,26 @@ public class ShoppingCartTest {
     @Test
     public void testRemoveItem() throws Exception {
         System.out.println("removeItem");
-        Product item = null;
-        ShoppingCart instance = new ShoppingCart();
-        instance.removeItem(item);
+        ShoppingCart instance = new ShoppingCart();//create shopping cart object
+        Product iPhone = new Product("iPhone 7", 200.00);//create iphone to add
+        instance.addItem(iPhone);
+        Product processor = new Product("i7-9700K", 400.00);
+        instance.addItem(processor);
+        //Product item = null;
+        //ShoppingCart instance = new ShoppingCart();
+        instance.removeItem(iPhone);
         // TODO review the generated test code and remove the default call to fail.
-        System.out.println();
-        fail("The test case is a prototype.");
+        int result = instance.getItemCount();
+        if (result == 1)//there should be one item left, then passed!
+            System.out.println("Test Passed!");
+        else
+        {
+            System.out.println("Test Failed.");
+            System.out.println();
+            fail("Test Failed.");
+        }
+        //System.out.println();
+        //fail("The test case is a prototype.");
     }
 
     /**
