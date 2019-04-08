@@ -97,18 +97,22 @@ public class ShoppingCartTest {
     }
 
     /**
-     * Test of getItemCount method, of class ShoppingCart.
+     * Test of initialization of class ShoppingCart.
      */
     @Test
-    public void testGetItemCount() {
-        System.out.println("getItemCount");
-        ShoppingCart instance = new ShoppingCart();
+    public void testCountOnCreation() {
+        System.out.println("Commencing Test for proper Shopping Cart initialization.");
+        ShoppingCart instance = new ShoppingCart(); //create shopping cart object
         int expResult = 0;
-        int result = instance.getItemCount();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+
+        if (assertEquals(expResult, instance.getItemCount())) //Tests if cart is empty on creation
+            System.out.println("Test Passed! Shopping Cart initialized correctly.");
+        else {
+            System.out.println("Test Failed.");
+            System.out.println();
+            fail("Test Failed.");
+        }
         System.out.println();
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -116,12 +120,19 @@ public class ShoppingCartTest {
      */
     @Test
     public void testEmpty() {
-        System.out.println("empty");
+        System.out.println("Commencing Test for proper Cart emptying operation.");
         ShoppingCart instance = new ShoppingCart();
         instance.empty();
-        // TODO review the generated test code and remove the default call to fail.
+        int expResult = 0;
+
+        if (assertEquals(expResult, instance.getItemCount())) //Tests if cart is actually emptied
+            System.out.println("Test Passed! Shopping Cart emptied correctly.");
+        else {
+            System.out.println("Test Failed.");
+            System.out.println();
+            fail("Test Failed.");
+        }
         System.out.println();
-        fail("The test case is a prototype.");
     }
 
 }
