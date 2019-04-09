@@ -141,7 +141,7 @@ public class ShoppingCartTest {
     @Test
     public void testBadRemove() {
         System.out.println("Commencing Test for exception on bad removal.");
-        ShoppingCart.instance = new Shopping Cart();
+        ShoppingCart.instance = new ShoppingCart();
         instance.empty();
         Product iPhone = new Product("iPhone 7", 200.00);
         Product test = new Product("test", 200.00);
