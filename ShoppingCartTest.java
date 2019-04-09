@@ -32,14 +32,12 @@ public class ShoppingCartTest {
         System.out.println("Balance Is: $" + result + " Expected Value Was: $" + expResult);
         //assertEquals(expResult, result, 0.0);
         if (result == expResult)
-            System.out.println("Test Passed!");
+            System.out.println("Test Passed!\n");
         else
         {
-            System.out.println("Test Failed.");
-            System.out.println();
+            System.out.println("Test Failed.\n");
             fail("Test Failed.");
         }
-        System.out.println();
     }
 
     /**
@@ -56,14 +54,12 @@ public class ShoppingCartTest {
         int result = instance.getItemCount(); //test/get the new count
         System.out.println("Result Is: " + result + " Expected Value Was: 1");
         if (result == 1)//if cout is 1, we added 1 item passed
-            System.out.println("Test Passed!");
+            System.out.println("Test Passed!\n");
         else
         {
-            System.out.println("Test Failed.");
-            System.out.println();
+            System.out.println("Test Failed.\n");
             fail("Test Failed.");
         }
-        System.out.println(); 
         //fail("The test case is a prototype.");
     }
 
@@ -85,14 +81,12 @@ public class ShoppingCartTest {
         int result = instance.getItemCount();
         System.out.println("Result Is: " + result + " Expected Value Was: 1");
         if (result == 1)//there should be one item left, then passed!
-            System.out.println("Test Passed!");
+            System.out.println("Test Passed!\n");
         else
         {
-            System.out.println("Test Failed.");
-            System.out.println();
+            System.out.println("Test Failed.\n");
             fail("Test Failed.");
         }
-        System.out.println();
         //fail("The test case is a prototype.");
     }
 
@@ -105,14 +99,12 @@ public class ShoppingCartTest {
         ShoppingCart instance = new ShoppingCart(); //create shopping cart object
         int expResult = 0;
 
-        if (assertEquals(expResult, instance.getItemCount())) //Tests if cart is empty on creation
-            System.out.println("Test Passed! Shopping Cart initialized correctly.");
+        if (instance.getItemCount() == expResult) //Tests if cart is empty on creation
+            System.out.println("Test Passed! Shopping Cart initialized correctly.\n");
         else {
-            System.out.println("Test Failed.");
-            System.out.println();
+            System.out.println("Test Failed.\n");
             fail("Test Failed.");
         }
-        System.out.println();
     }
 
     /**
@@ -125,23 +117,21 @@ public class ShoppingCartTest {
         instance.empty();
         int expResult = 0;
 
-        if (assertEquals(expResult, instance.getItemCount())) //Tests if cart is actually emptied
-            System.out.println("Test Passed! Shopping Cart emptied correctly.");
+        if (instance.getItemCount() == expResult) //Tests if cart is actually emptied
+            System.out.println("Test Passed! Shopping Cart emptied correctly.\n");
         else {
-            System.out.println("Test Failed.");
-            System.out.println();
+            System.out.println("Test Failed.\n");
             fail("Test Failed.");
         }
-        System.out.println();
     }
 
     /**
-     * Test of removal of non-existant item
+     * Test of removal of non-existent item
      */
     @Test
     public void testBadRemove() {
         System.out.println("Commencing Test for exception on bad removal.");
-        ShoppingCart.instance = new ShoppingCart();
+        ShoppingCart instance = new ShoppingCart();
         instance.empty();
         Product iPhone = new Product("iPhone 7", 200.00);
         Product test = new Product("test", 200.00);
@@ -150,7 +140,7 @@ public class ShoppingCartTest {
             instance.removeItem(test);
             fail("Exception should have been thrown.");
         }catch (ProductNotFoundException e){
-            System.out.println("Test Passed");
+            System.out.println("Test Passed! \n");
             return;
         }
         fail("Wrong exception thrown.");
