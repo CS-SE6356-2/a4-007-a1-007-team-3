@@ -135,4 +135,24 @@ public class ShoppingCartTest {
         System.out.println();
     }
 
+    /**
+     * Test of removal of non-existant item
+     */
+    @Test
+    public void testBadRemove() {
+        System.out.println("Commencing Test for exception on bad removal.");
+        ShoppingCart.instance = new Shopping Cart();
+        instance.empty();
+        Product iPhone = new Product("iPhone 7", 200.00);
+        Product test = new Product("test", 200.00);
+        instance.addItem(iPhone);
+        try{
+            instance.removeItem(test);
+            fail("Exception should have been thrown.");
+        }catch (ProductNotFoundException e){
+            System.out.println("Test Passed");
+            return;
+        }
+        fail("Wrong exception thrown.");
+    }
 }
